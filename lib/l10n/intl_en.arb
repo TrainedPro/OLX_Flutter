@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "@@last_modified": "2024-08-18T00:00:00Z",
+  "search_input_decorator": "Search",
+  "@search_input_decorator": {
+    "description": "Label for the search input field",
+    "type": "text",
+    "placeholders": {}
+  }
+}
