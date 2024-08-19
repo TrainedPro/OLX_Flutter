@@ -6,5 +6,8 @@
     "description": "Label for the search input field",
     "type": "text",
     "placeholders": {}
-  }
+  },
+  "app_name" : "OLX",
+  "browse_categories": "Browse Categories",
+  "sponsored_ads":"Sponsored Ads"
 }

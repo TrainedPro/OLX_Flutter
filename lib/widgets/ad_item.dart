@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olx/constants/colors.dart';
 import '../models/ad_model.dart';
 
 class AdItem extends StatelessWidget {
@@ -18,27 +19,27 @@ class AdItem extends StatelessWidget {
             height: 100,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: Colors.grey[300], // Placeholder color
+              color: AppColor.grey, // Placeholder color
             ),
             child: ad.imagePath != null
                 ? Image.asset(
                     ad.imagePath!,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
-                      return Center(
+                      return const Center(
                         child: Icon(
                           Icons.image, // Placeholder icon
                           size: 40,
-                          color: Colors.grey[600],
+                          color: AppColor.lightBackgroundColor,
                         ),
                       );
                     },
                   )
-                : Center(
+                : const Center(
                     child: Icon(
                       Icons.image, // Default placeholder icon
                       size: 40,
-                      color: Colors.grey[600],
+                      color: AppColor.lightBackgroundColor,
                     ),
                   ),
           ),

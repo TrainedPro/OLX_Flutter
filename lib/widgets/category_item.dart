@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olx/constants/colors.dart';
 
 class CategoryItem extends StatelessWidget {
   final String imagePath;
@@ -20,7 +21,7 @@ class CategoryItem extends StatelessWidget {
           CircleAvatar(
             radius: 30,
             backgroundColor:
-                Colors.pink[100], // Background color for the placeholder
+                AppColor.grey, // Background color for the placeholder
             child: ClipOval(
               child: Image.asset(
                 imagePath,
@@ -30,7 +31,7 @@ class CategoryItem extends StatelessWidget {
                   return Icon(
                     Icons.category, // Placeholder icon
                     size: 60,
-                    color: Colors.pink[300],
+                    color: AppColor.lightBackgroundColor,
                   );
                 },
               ),

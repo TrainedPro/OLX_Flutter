@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:olx/constants/colors.dart';
+import 'package:olx/extensions/buildcontext/loc.dart';
 import 'package:provider/provider.dart';
 import '../widgets/ad_item.dart';
 import '../widgets/category_item.dart';
@@ -16,36 +18,40 @@ class HomePage extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AdViewModel()),
       ],
       child: Scaffold(
+        backgroundColor: AppColor.darkBackgroundColor,
         appBar: AppBar(
-          title: const Text('OLX'),
-          backgroundColor: Colors.green,
+          title: Text(context.loc.app_name),
+          backgroundColor: AppColor.primaryGreenColor,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               // Search Field
               TextField(
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: '${context.loc.search_input_decorator}...',
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: Colors.green),
+                    borderSide:
+                        const BorderSide(color: AppColor.primaryGreenColor),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: Colors.green),
+                    borderSide:
+                        const BorderSide(color: AppColor.primaryGreenColor),
                   ),
                 ),
               ),
               const SizedBox(height: 20),
 
               // Browse Categories
-              const Text(
-                'Browse Categories',
-                style: TextStyle(
+              Text(
+                context.loc.browse_categories,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
                 ),
@@ -54,7 +60,7 @@ class HomePage extends StatelessWidget {
               Consumer<CategoryViewModel>(
                 builder: (context, viewModel, child) {
                   return SizedBox(
-                    height: 100,
+                    height: 88,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: viewModel.categories.length,
@@ -72,12 +78,12 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               // Ads Section
-              const Text(
-                'Sponsored Ads',
-                style: TextStyle(
+              Text(
+                context.loc.sponsored_ads,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
                 ),
